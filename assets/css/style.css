@@ -1,0 +1,81 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.header{
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 30%, rgba(0,212,255,1) 100%);
+    text-align: center;
+    width: 80%;
+    color: aliceblue;
+}
+
+.title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input{
+    margin: 30px;
+}
+
+.input-field{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.input-value{
+    margin: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.submit{
+    background-color: rgba(9,9,121,1);
+    border-radius: 5px;
+    color: aliceblue;
+    margin: 10px;
+}
+
+.submit:hover {
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 0%, rgba(0,212,255,1) 0%);
+    color: black;
+}
+
+.weather-display{
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 30px;
+}
+
+
+.forecast-container{
+    background-color: rgba(9,9,121,1);
+    color: aliceblue;
+    text-align: center;
+    padding: 10px;
+    margin: 30px;
+    border-radius: 10px;
+}
+
+.forecast{
+    text-align: center;
+
+}
