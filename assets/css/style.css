@@ -35,17 +35,20 @@ main{
 .input-field{
     display: flex;
     flex-direction: column;
-    margin: 30px;
+
 }
 
 .input-value{
     margin: 10px;
+    border-radius: 5px;
+    text-align: center;
 }
 
 .submit{
     background-color: rgba(9,9,121,1);
-    border-radius: 10px;
+    border-radius: 5px;
     color: aliceblue;
+    margin: 10px;
 }
 
 .submit:hover {
