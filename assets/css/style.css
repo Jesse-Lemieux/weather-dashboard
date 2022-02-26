@@ -64,6 +64,11 @@ main{
     border-radius: 10px;
     padding: 20px;
     margin: 30px;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 
@@ -107,6 +112,7 @@ main{
     color: aliceblue;
     border-radius: 2px;
     border: 2px solid black;
+    width: fit-content;
 }
 
 .moderate{
@@ -114,25 +120,44 @@ main{
     color: black;
     border-radius: 2px;
     border: 2px solid black;
+    width: fit-content;
 }
+
 
 .high{
     background-color: orange;
     color: black;
     border-radius: 2px;
     border: 2px solid black;
+    width: fit-content;
 }
+
 
 .very-high{
     background-color: red;
     color: black;
     border-radius: 2px;
     border: 2px solid black;
+    width: fit-content;
 }
+
 
 .extreme{
     background-color: purple;
     color: aliceblue;
     border-radius: 2px;
     border: 2px solid black;
+    width: fit-content;
+}
+
+
+#forecast-container{
+    display: flex;
+
+}
+
+.city-contianer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
