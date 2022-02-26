@@ -79,6 +79,149 @@ fetch('https://api.openweathermap.org/data/2.5/onecall?lat='+cityLat+'&lon='+cit
 
 //append 5 day forescast
 
+var dayOne = document.createElement('div')
+var dayOneTempHighEl = document.createElement('p')
+dayOneTempHighEl.innerHTML = dayOneTempHigh
+var dayOneTempLowEl = document.createElement('p')
+dayOneTempLowEl.innerHTML = dayOneTempLow
+var dayOneWindEl = document.createElement('p')
+dayOneWindEl.innerHTML = dayOneWind
+var dayOneHumEl = document.createElement('p')
+dayOneHumEl.innerHTML = dayOneHum
+dayOne.classList.add('.forecast-container')
+
+if(dayOneHum <= 2  ){
+    dayOneHumEl.classList.add('good')
+}
+else if(dayOneHum <= 5){
+    dayOneHumEl.classList.add('moderate')
+}
+else if(dayOneHum <= 7){
+    dayOneHumEl.classList.add('high')
+}
+else if(dayOneHum <= 8){
+    dayOneHumEl.classList.add('very-high')
+}
+else{
+    dayOneHumEl.classList.add('extreme')
+}
+
+
+
+
+
+var dayTwo = document.createElement('div')
+var dayTwoTempHighEl = document.createElement('p')
+dayTwoTempHighEl.innerHTML = dayTwoTempHigh
+var dayTwoTempLowEl = document.createElement('p')
+dayTwoTempLowEl.innerHTML = dayTwoTempLow
+var dayTwoWindEl = document.createElement('p')
+dayTwoWindEl.innerHTML = dayTwoWind
+var dayTwoHumEl = document.createElement('p')
+dayTwoHumEl.innerHTML = dayTwoHum
+dayTwo.classList.add('.forecast-container')
+
+
+if(dayTwoHum <= 2  ){
+    dayTwoHumEl.classList.add('good')
+}
+else if(dayTwoHum <= 5){
+    dayTwoHumEl.classList.add('moderate')
+}
+else if(dayTwoHum <= 7){
+    dayTwoHumEl.classList.add('high')
+}
+else if(dayTwoHum <= 8){
+    dayTwoHumEl.classList.add('very-high')
+}
+else{
+    dayTwoHumEl.classList.add('extreme')
+}
+
+
+var dayThree = document.createElement('div')
+var dayThreeTempHighEl = document.createElement('p')
+dayThreeTempHighEl.innerHTML = dayThreeTempHigh
+var dayThreeTempLowEl = document.createElement('p')
+dayThreeTempLowEl.innerHTML = dayThreeTempLow
+var dayThreeWindEl = document.createElement('p')
+dayThreeWindEl.innerHTML = dayThreeWind
+var dayThreeHumEl = document.createElement('p')
+dayThreeHumEl.innerHTML = dayThreeHum
+dayThree.classList.add('.forecast-container')
+
+if(dayThreeHum <= 2  ){
+    dayThreeHumEl.classList.add('good')
+}
+else if(dayThreeHum <= 5){
+    dayThreeHumEl.classList.add('moderate')
+}
+else if(dayThreeHum <= 7){
+    dayThreeHumEl.classList.add('high')
+}
+else if(dayThreeHum <= 8){
+    dayThreeHumEl.classList.add('very-high')
+}
+else{
+    dayThreeHumEl.classList.add('extreme')
+}
+
+
+var dayFour = document.createElement('div')
+var dayFourTempHighEl = document.createElement('p')
+dayFourTempHighEl.innerHTML = dayFourTempHigh
+var dayFourTempLowEl = document.createElement('p')
+dayFourTempLowEl.innerHTML = dayFourTempLow
+var dayFourWindEl = document.createElement('p')
+dayFourWindEl.innerHTML = dayFourWind
+var dayFourHumEl = document.createElement('p')
+dayFourHumEl.innerHTML = dayFourHum
+dayFour.classList.add('.forecast-container')
+
+if(dayFourHum <= 2  ){
+    dayFourHumEl.classList.add('good')
+}
+else if(dayFourHum <= 5){
+    dayFourHumEl.classList.add('moderate')
+}
+else if(dayFourHum <= 7){
+    dayFourHumEl.classList.add('high')
+}
+else if(dayFourHum <= 8){
+    dayFourHumEl.classList.add('very-high')
+}
+else{
+    dayFourHumEl.classList.add('extreme')
+}
+
+
+var dayFive = document.createElement('div')
+var dayFiveTempHighEl = document.createElement('p')
+dayFiveTempHighEl.innerHTML = dayFiveTempHigh
+var dayFiveTempLowEl = document.createElement('p')
+dayFiveTempLowEl.innerHTML = dayFiveTempLow
+var dayFiveWindEl = document.createElement('p')
+dayFiveWindEl.innerHTML = dayFiveWind
+var dayFiveHumEl = document.createElement('p')
+dayFiveHumEl.innerHTML = dayFiveHum
+dayFive.classList.add('.forecast-container')
+
+if(dayFiveHum <= 2  ){
+    dayFiveHumEl.classList.add('good')
+}
+else if(dayFiveHum <= 5){
+    dayFiveHumEl.classList.add('moderate')
+}
+else if(dayFiveHum <= 7){
+    dayFiveHumEl.classList.add('high')
+}
+else if(dayFiveHum <= 8){
+    dayFiveHumEl.classList.add('very-high')
+}
+else{
+    dayFiveHumEl.classList.add('extreme')
+}
+
         
 //Display values to weather display
 
