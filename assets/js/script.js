@@ -16,7 +16,7 @@ var historyContainer = document.querySelector('.left-content')
 
 button.addEventListener('click', function(){
 
-//Remove residual classes at start of search
+//Remove UV index color at start of search
 
     mainUv.classname = '';
 
