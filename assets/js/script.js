@@ -16,6 +16,10 @@ var historyContainer = document.querySelector('.left-content')
 
 button.addEventListener('click', function(){
 
+//Remove residual classes at start of search
+
+    mainUv.classname = '';
+
 //Fetch to find coordinates and city name based on user input
 
 fetch('https://api.openweathermap.org/data/2.5/weather?q='+inputValue.value+'&appid=7930f77cca8484bf43bfc2ebd049bdcd')
@@ -36,7 +40,6 @@ fetch('https://api.openweathermap.org/data/2.5/onecall?lat='+cityLat+'&lon='+cit
         var cityHum = data['current']['humidity'];
         var cityUv = data['current']['uvi'];
         
-
 //5 day forecast data
 
 
@@ -48,6 +51,24 @@ fetch('https://api.openweathermap.org/data/2.5/onecall?lat='+cityLat+'&lon='+cit
         mainWind.innerHTML = 'Wind: ' + cityWind;
         mainHum.innerHTML = 'Humidity: ' + cityHum;
         mainUv.innerHTML = 'UV Index: ' + cityUv;
+
+//conditions for UV data to be colored based on value
+
+        if(cityUv <= 2  ){
+            mainUv.classList.add('good')
+        }
+        else if(cityUv <= 5){
+            mainUv.classList.add('moderate')
+        }
+        else if(cityUv <= 7){
+            mainUv.classList.add('high')
+        }
+        else if(cityUv <= 8){
+            mainUv.classList.add('very-high')
+        }
+        else{
+            mainUv.classList.add('extreme')
+        }
 
 
 //Append input to search history
