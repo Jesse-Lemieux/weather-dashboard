@@ -27,18 +27,20 @@
 </div>
 
     <div class="right-content">
-    <div class="weather-display">
+    <div class="weather-display hide">
         <h1 class="main-city"></h1>
+        <h2 class="date"></h2>
         <p class="main-temp"></p>
         <p class="main-wind"></p>
         <p class="main-hum"></p>
         <p class="main-uv"></p>
     </div>
 
-    <div class="forecast">
+    <div class="forecast hide">
         <h1>5-Day Forecast:</h1>
         <div class="forecast-container">
             <h2>2/24/2022</h2>
+            <h3 class="fc-date"></h3>
             <p>temp</p>
             <p>Wind</p>
             <p>Humidity</p>
@@ -46,7 +48,10 @@
     </div>
 </div>
 </main>
-    
+<script src="assets/js/moment.js"></script>
+<script>
+    moment().format();
+</script>
 <script src="assets/js/script.js"></script>
 </body>
 </html>
