@@ -42,13 +42,49 @@ fetch('https://api.openweathermap.org/data/2.5/onecall?lat='+cityLat+'&lon='+cit
         
 //5 day forecast data
 
+//day 1
+
+        var dayOneTempHigh = data['daily']['1']['max']
+        var dayOneTempLow = data['daily']['1']['min']
+        var dayOneWind = data['daily']['1']['wind_speed']
+        var dayOneHum = data['daily']['1']['humidity']
+
+//day 2
+
+        var dayTwoTempHigh = data['daily']['2']['max']
+        var dayTwoTempLow = data['daily']['2']['min']
+        var dayTwoWind = data['daily']['2']['wind_speed']
+        var dayTwoHum = data['daily']['2']['humidity']
+
+//day 3
+
+        var dayThreeTempHigh = data['daily']['3']['max']
+        var dayThreeTempLow = data['daily']['3']['min']
+        var dayThreeWind = data['daily']['3']['wind_speed']
+        var dayThreeHum = data['daily']['3']['humidity']
+
+//day 4
+
+        var dayFourTempHigh = data['daily']['4']['max']
+        var dayFourTempLow = data['daily']['4']['min']
+        var dayFourWind = data['daily']['4']['wind_speed']
+        var dayFourHum = data['daily']['4']['humidity']
+
+//day 5
+
+        var dayFiveTempHigh = data['daily']['5']['max']
+        var dayFiveTempLow = data['daily']['5']['min']
+        var dayFiveWind = data['daily']['5']['wind_speed']
+        var dayFiveHum = data['daily']['5']['humidity']
+
+//append 5 day forescast
 
         
 //Display values to weather display
 
         mainCity.innerHTML = cityValue;
         mainTemp.innerHTML = 'Temp: ' + cityTemp + '°F';
-        mainWind.innerHTML = 'Wind: ' + cityWind;
+        mainWind.innerHTML = 'Wind: ' + cityWind + ' mph';
         mainHum.innerHTML = 'Humidity: ' + cityHum;
         mainUv.innerHTML = 'UV Index: ' + cityUv;
 
