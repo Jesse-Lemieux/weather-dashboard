@@ -9,53 +9,80 @@
         var mainHum = document.querySelector('.main-hum')
         var mainUv = document.querySelector('.main-uv')
         var mainDate = document.querySelector('.date')
+        var mainIcon = document.querySelector('.icon')
         var mainWeatherDisplay = document.querySelector('.weather-display')
         var forecastDisplay = document.querySelector('.forecast')
         var historyContainer = document.querySelector('.left-content')
         var forecastContainer = document.querySelector('#forecast-container')
         var dayOne = document.querySelector('#day-one')
+        var dayOneIcon = document.querySelector('.day-one-icon')
         var dayOneDates = document.querySelector('#day-one-date')
         var dayOneHighs = document.querySelector('#day-one-highs')
         var dayOneLows = document.querySelector('#day-one-lows')
         var dayOneWind = document.querySelector('#day-one-wind')
         var dayOneHum = document.querySelector('#day-one-hum')
         var dayTwo = document.querySelector('#day-two')
+        var dayTwoIcon = document.querySelector('.day-two-icon')
         var dayTwoDates = document.querySelector('#day-two-date')
         var dayTwoHighs = document.querySelector('#day-two-highs')
         var dayTwoLows = document.querySelector('#day-two-lows')
         var dayTwoWind = document.querySelector('#day-two-wind')
         var dayTwoHum = document.querySelector('#day-two-hum')
         var dayThree = document.querySelector('#day-three')
+        var dayThreeIcon = document.querySelector('.day-three-icon')
         var dayThreeDates = document.querySelector('#day-three-date')
         var dayThreeHighs = document.querySelector('#day-three-highs')
         var dayThreeLows = document.querySelector('#day-three-lows')
         var dayThreeWind = document.querySelector('#day-three-wind')
         var dayThreeHum = document.querySelector('#day-three-hum')
         var dayFour = document.querySelector('#day-four')
+        var dayFourIcon = document.querySelector('.day-four-icon')
         var dayFourDates = document.querySelector('#day-four-date')
         var dayFourHighs = document.querySelector('#day-four-highs')
         var dayFourLows = document.querySelector('#day-four-lows')
         var dayFourWind = document.querySelector('#day-four-wind')
         var dayFourHum = document.querySelector('#day-four-hum')
         var dayFive = document.querySelector('#day-five')
+        var dayFiveIcon = document.querySelector('.day-five-icon')
         var dayFiveDates = document.querySelector('#day-five-date')
         var dayFiveHighs = document.querySelector('#day-five-highs')
         var dayFiveLows = document.querySelector('#day-five-lows')
         var dayFiveWind = document.querySelector('#day-five-wind')
         var dayFiveHum = document.querySelector('#day-five-hum')
+        var rightContent = document.querySelector('.right-content')
+       
 //#endregion
 //Button Click Functionality
 
-button.addEventListener('click', function getWeather(){
+function newSearchHistory(){
 
+    var searchHistory = document.createElement('div')
 //Add input to localStorage to use later
 
-localStorage.setItem(inputValue.value, 'city')
+localStorage.setItem('city', inputValue.value)
 
+//Add input as search history button
 
+    searchHistory.classList.add('history')
+    searchHistory.innerHTML = localStorage.getItem('city')
+    historyContainer.appendChild(searchHistory)
+
+//Search history button functionality
+
+    searchHistory.addEventListener('click', function(){
+        inputValue.value = searchHistory.innerHTML
+        historyContainer.removeChild(searchHistory)
+        getWeather();
+    })
+}
+
+function getWeather(){
+
+    
 //Remove UV index color at start of search, as well as 5 day forecast
     mainWeatherDisplay.classList.remove('hide')
     forecastDisplay.classList.remove('hide')
+    rightContent.classList.remove('hide')
     mainUv.classname = '';
 
 //Fetch to find coordinates and city name based on user input
@@ -63,20 +90,26 @@ localStorage.setItem(inputValue.value, 'city')
 fetch('https://api.openweathermap.org/data/2.5/weather?q='+inputValue.value+'&appid=7930f77cca8484bf43bfc2ebd049bdcd')
     .then(response => response.json())
     .then(data => {
+        console.log(data)
         var cityLat = data['coord']['lat'];
         var cityLon = data['coord']['lon'];
         var cityValue = data['name'];
+        var icon = data['weather']['0']['icon'];
+    
   
 //Use name and coordinates we just aquired to fetch weather data
 
 fetch('https://api.openweathermap.org/data/2.5/onecall?lat='+cityLat+'&lon='+cityLon+'&units=imperial&appid=7930f77cca8484bf43bfc2ebd049bdcd')
     .then(response => response.json())
     .then(data => {
-        console.log(data)
         var cityTemp = data['current']['temp'];
         var cityWind = data['current']['wind_speed'];
         var cityHum = data['current']['humidity'];
         var cityUv = data['current']['uvi'];
+
+    
+newSearchHistory();
+    
         
 //5 day forecast data
 //#region 
@@ -220,6 +253,7 @@ dayFiveHum.innerHTML = 'Humidity: ' + dayFiveHumData
 
         mainCity.innerHTML = cityValue;
         mainDate.innerHTML = today
+        mainIcon.innerHTML = '<img src=http://openweathermap.org/img/wn/'+icon+'@2x.png>'
         mainTemp.innerHTML = 'Temp: ' + Math.round(cityTemp) + '°F';
         mainWind.innerHTML = 'Wind: ' + cityWind + ' mph';
         mainHum.innerHTML = 'Humidity: ' + cityHum;
@@ -244,11 +278,25 @@ dayFiveHum.innerHTML = 'Humidity: ' + dayFiveHumData
         }
 
 
-
+        inputValue.value = ''
 
     })
+
 })
+.catch((error) => {
+    mainWeatherDisplay.classList.add('hide')
+    forecastDisplay.classList.add('hide')
+    forecastContainer.classList.add('hide')
+    rightContent.classList.add('hide')
+    alert('enter a valid city name')
+    inputValue.value = ''
 })
+}
+
+button.addEventListener('click', function(){
+    getWeather()
+})
+
 
 
 
