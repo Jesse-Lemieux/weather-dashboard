@@ -90,7 +90,6 @@ function getWeather(){
 fetch('https://api.openweathermap.org/data/2.5/weather?q='+inputValue.value+'&appid=7930f77cca8484bf43bfc2ebd049bdcd')
     .then(response => response.json())
     .then(data => {
-        console.log(data)
         var cityLat = data['coord']['lat'];
         var cityLon = data['coord']['lon'];
         var cityValue = data['name'];
@@ -102,6 +101,7 @@ fetch('https://api.openweathermap.org/data/2.5/weather?q='+inputValue.value+'&ap
 fetch('https://api.openweathermap.org/data/2.5/onecall?lat='+cityLat+'&lon='+cityLon+'&units=imperial&appid=7930f77cca8484bf43bfc2ebd049bdcd')
     .then(response => response.json())
     .then(data => {
+        console.log(data)
         var cityTemp = data['current']['temp'];
         var cityWind = data['current']['wind_speed'];
         var cityHum = data['current']['humidity'];
@@ -120,6 +120,8 @@ newSearchHistory();
         var dayOneTempLow = data['daily']['1']['temp']['min']
         var dayOneWindData = data['daily']['1']['wind_speed']
         var dayOneHumData = data['daily']['1']['humidity']
+        var dayOneIconData = data['daily']['1']['weather']['0']['icon']
+      
 
 //day 2
 
@@ -127,6 +129,7 @@ newSearchHistory();
         var dayTwoTempLow = data['daily']['2']['temp']['min']
         var dayTwoWindData = data['daily']['2']['wind_speed']
         var dayTwoHumData = data['daily']['2']['humidity']
+        var dayTwoIconData = data['daily']['2']['weather']['0']['icon']
 
 //day 3
 
@@ -134,6 +137,7 @@ newSearchHistory();
         var dayThreeTempLow = data['daily']['3']['temp']['min']
         var dayThreeWindData = data['daily']['3']['wind_speed']
         var dayThreeHumData = data['daily']['3']['humidity']
+        var dayThreeIconData = data['daily']['3']['weather']['0']['icon']
 
 //day 4
 
@@ -141,6 +145,7 @@ newSearchHistory();
         var dayFourTempLow = data['daily']['4']['temp']['min']
         var dayFourWindData = data['daily']['4']['wind_speed']
         var dayFourHumData = data['daily']['4']['humidity']
+        var dayFourIconData = data['daily']['4']['weather']['0']['icon']
 
 //day 5
 
@@ -148,6 +153,7 @@ newSearchHistory();
         var dayFiveTempLow = data['daily']['5']['temp']['min']
         var dayFiveWindData = data['daily']['5']['wind_speed']
         var dayFiveHumData = data['daily']['5']['humidity']
+        var dayFiveIconData = data['daily']['5']['weather']['0']['icon']
 //#endregion
 //Get Dates
 //#region 
@@ -207,6 +213,7 @@ dayOneHighs.innerHTML = 'Highs of: ' + Math.round(dayOneTempHigh) + '°F'
 dayOneLows.innerHTML = 'Lows of: ' + Math.round(dayOneTempLow) + '°F'
 dayOneWind.innerHTML = 'Wind: ' + dayOneWindData + ' mph'
 dayOneHum.innerHTML = 'Humidity: ' + dayOneHumData
+dayOneIcon.innerHTML = '<img src=http://openweathermap.org/img/wn/'+dayOneIconData+'@2x.png>'
 
 
 //Day 2 -------------------------->
@@ -217,6 +224,7 @@ dayTwoHighs.innerHTML = 'Highs of: ' + Math.round(dayTwoTempHigh) + '°F'
 dayTwoLows.innerHTML = 'Lows of: ' + Math.round(dayTwoTempLow) + '°F'
 dayTwoWind.innerHTML = 'Wind: ' + dayTwoWindData + ' mph'
 dayTwoHum.innerHTML = 'Humidity: ' + dayTwoHumData
+dayTwoIcon.innerHTML = '<img src=http://openweathermap.org/img/wn/'+dayTwoIconData+'@2x.png>'
 
 
 //Day 3 -------------------------->
@@ -227,6 +235,7 @@ dayThreeHighs.innerHTML = 'Highs of: ' + Math.round(dayThreeTempHigh) + '°F'
 dayThreeLows.innerHTML = 'Lows of: ' + Math.round(dayThreeTempLow) + '°F'
 dayThreeWind.innerHTML = 'Wind: ' + dayThreeWindData + ' mph'
 dayThreeHum.innerHTML = 'Humidity: ' + dayThreeHumData
+dayThreeIcon.innerHTML = '<img src=http://openweathermap.org/img/wn/'+dayThreeIconData+'@2x.png>'
 
 
 //Day 4 -------------------------->
@@ -237,6 +246,7 @@ dayFourHighs.innerHTML = 'Highs of: ' + Math.round(dayFourTempHigh) + '°F'
 dayFourLows.innerHTML = 'Lows of: ' + Math.round(dayFourTempLow) + '°F'
 dayFourWind.innerHTML = 'Wind: ' + dayFourWindData + ' mph'
 dayFourHum.innerHTML = 'Humidity: ' + dayFourHumData
+dayFourIcon.innerHTML = '<img src=http://openweathermap.org/img/wn/'+dayFourIconData+'@2x.png>'
 
 
 //Day 5 -------------------------->
@@ -247,7 +257,10 @@ dayFiveHighs.innerHTML = 'Highs of: ' + Math.round(dayFiveTempHigh) + '°F'
 dayFiveLows.innerHTML = 'Lows of: ' + Math.round(dayFiveTempLow) + '°F'
 dayFiveWind.innerHTML = 'Wind: ' + dayFiveWindData + ' mph'
 dayFiveHum.innerHTML = 'Humidity: ' + dayFiveHumData
+dayFiveIcon.innerHTML = '<img src=http://openweathermap.org/img/wn/'+dayFiveIconData+'@2x.png>'
 
+
+console.log(dayFiveIconData)
 //#endregion     
 //Display values to main weather display
 
