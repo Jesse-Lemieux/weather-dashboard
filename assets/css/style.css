@@ -14,6 +14,7 @@ body{
     text-align: center;
     width: 80%;
     color: aliceblue;
+    margin: 30px;
 }
 
 .title{
@@ -55,6 +56,7 @@ main{
     background: rgb(2,0,36);
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 0%, rgba(0,212,255,1) 0%);
     color: black;
+    cursor: pointer;
 }
 
 .weather-display{
@@ -63,6 +65,12 @@ main{
     border-radius: 10px;
     padding: 20px;
     margin: 30px;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: skyblue;
 }
 
 
@@ -78,4 +86,82 @@ main{
 .forecast{
     text-align: center;
 
+}
+
+.hide {
+    display: none;
+}
+
+.history{
+    background-color: #7AA095;
+    border-radius: 5px;
+    color: black;
+    margin: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.history:hover {
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 0%, rgba(0,212,255,1) 0%);
+    color: whitesmoke;
+    cursor: pointer;
+}
+
+
+.good{
+    background-color: green;
+    color: aliceblue;
+    border-radius: 2px;
+    border: 2px solid black;
+    width: fit-content;
+}
+
+.moderate{
+    background-color: yellow;
+    color: black;
+    border-radius: 2px;
+    border: 2px solid black;
+    width: fit-content;
+}
+
+
+.high{
+    background-color: orange;
+    color: black;
+    border-radius: 2px;
+    border: 2px solid black;
+    width: fit-content;
+}
+
+
+.very-high{
+    background-color: red;
+    color: black;
+    border-radius: 2px;
+    border: 2px solid black;
+    width: fit-content;
+}
+
+
+.extreme{
+    background-color: purple;
+    color: aliceblue;
+    border-radius: 2px;
+    border: 2px solid black;
+    width: fit-content;
+}
+
+
+#forecast-container{
+    display: flex;
+
+}
+
+.city-contianer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

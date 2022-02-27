@@ -20,33 +20,74 @@
     <div class="input">
         <h1 class="search">Search for a city:</h1>
         <div class="input-field">
-        <input type="text" class="input-value">
+        <input type="text"  class="input-value">
         <input type="submit" value="submit" class="submit">
         </div>
     </div>
 </div>
 
     <div class="right-content">
-    <div class="weather-display">
-        <h1>Current City</h1>
-        <p>temp</p>
-        <p>wind</p>
-        <p>humidity</p>
-        <p>UV index</p>
-    </div>
-
-    <div class="forecast">
-        <h1>5-Day Forecast:</h1>
-        <div class="forecast-container">
-            <h2>2/24/2022</h2>
-            <p>temp</p>
-            <p>Wind</p>
-            <p>Humidity</p>
+        <div class="city-contianer">
+    <div class="weather-display hide">
+        <h1 class="main-city"></h1>
+        <h2 class="date"></h2>
+        <div class="icon"></div>
+        <p class="main-temp"></p>
+        <p class="main-wind"></p>
+        <p class="main-hum"></p>
+        <p class="main-uv"></p>
         </div>
     </div>
-</div>
+    <div class="forecast hide">
+        <h1>5-Day Forecast:</h1>
+    </div>
+    <div id= 'forecast-container'>
+        <div id="day-one">
+            <h2 id="day-one-date"></h2>
+            <div class="day-one-icon"></div>
+            <p id="day-one-highs"></p>
+            <p id="day-one-lows"></p>
+            <p id="day-one-wind"></p>
+            <p id="day-one-hum"></p>
+        </div>
+        <div id="day-two">
+            <h2 id="day-two-date"></h2>
+            <div class="day-two-icon"></div>
+            <p id="day-two-highs"></p>
+            <p id="day-two-lows"></p>
+            <p id="day-two-wind"></p>
+            <p id="day-two-hum"></p>
+        </div>
+        <div id="day-three">
+            <h2 id="day-three-date"></h2>
+            <div class="day-three-icon"></div>
+            <p id="day-three-highs"></p>
+            <p id="day-three-lows"></p>
+            <p id="day-three-wind"></p>
+            <p id="day-three-hum"></p>
+        </div>
+        <div id="day-four">
+            <h2 id="day-four-date"></h2>
+            <div class="day-four-icon"></div>
+            <p id="day-four-highs"></p>
+            <p id="day-four-lows"></p>
+            <p id="day-four-wind"></p>
+            <p id="day-four-hum"></p>
+        </div>
+        <div id="day-five">
+            <h2 id="day-five-date"></h2>
+            <div class="day-five-icon"></div>
+            <p id="day-five-highs"></p>
+            <p id="day-five-lows"></p>
+            <p id="day-five-wind"></p>
+            <p id="day-five-hum"></p>
+        </div>
+    </div>
 </main>
-    
-<script src="/assets/js/script.js"></script>
+<script src="assets/js/moment.js"></script>
+<script>
+    moment().format();
+</script>
+<script src="assets/js/script.js"></script>
 </body>
 </html>
