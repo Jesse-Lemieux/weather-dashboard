@@ -16,10 +16,10 @@
 
   The weather dashboard is very easy to use. Open the page in your browser and search for a city. You will then be shown weather data from that city for today's, as well as the next 5 day's forecast. 
   
-  ![Landing Page](assets/screenshots/Screenshot (8).png)
+  ![Landing Page](/assets/screenshots/Screenshot (8).png)
   
   
   Also, the dashboard remebers you! Next time you load the page you will notice buttons underneathe the search bar which contain your search history, and they are interactive! Click them to be shown weather data for that target!
   
-  ![Search History](assets/screenshots/Screenshot (7).png)
+  ![Search History](/assets/screenshots/Screenshot (7).png)
 
