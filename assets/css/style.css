@@ -12,7 +12,7 @@ body{
     background: rgb(2,0,36);
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 30%, rgba(0,212,255,1) 100%);
     text-align: center;
-    width: 80%;
+    width: 100%;
     color: aliceblue;
     margin: 30px;
 }
@@ -93,13 +93,15 @@ main{
 }
 
 .history{
-    background-color: #7AA095;
+    background-color: skyblue;
     border-radius: 5px;
     color: black;
-    margin: 10px;
+    margin: 0px;
     text-align: center;
     display: flex;
     justify-content: center;
+    border: 2px black solid;
+    box-shadow: 0 8px 6px -6px black;
     
 }
 
