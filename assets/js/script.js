@@ -12,7 +12,7 @@
         var mainIcon = document.querySelector('.icon')
         var mainWeatherDisplay = document.querySelector('.weather-display')
         var forecastDisplay = document.querySelector('.forecast')
-        var historyContainer = document.querySelector('.left-content')
+        var historyContainer = document.querySelector('.history-container')
         var forecastContainer = document.querySelector('#forecast-container')
         var dayOne = document.querySelector('#day-one')
         var dayOneIcon = document.querySelector('.day-one-icon')
@@ -50,40 +50,67 @@
         var dayFiveWind = document.querySelector('#day-five-wind')
         var dayFiveHum = document.querySelector('#day-five-hum')
         var rightContent = document.querySelector('.right-content')
+        var newEntry = 0
+        var historySwitch = false
        
 //#endregion
 //Button Click Functionality
 
-function newSearchHistory(){
-
+historyContainer.onclick = function(event){
+    var x = event.target;
+    inputValue.value = x.innerHTML
+    historySwitch = 1
+    getWeather()
+    console.log(inputValue.value)
+}
+window.onload = function startPage(){
+for (var i = 0; i < localStorage.length; i++){
+    
     var searchHistory = document.createElement('div')
-//Add input to localStorage to use later
-
-localStorage.setItem('city', inputValue.value)
 
 //Add input as search history button
 
     searchHistory.classList.add('history')
-    searchHistory.innerHTML = localStorage.getItem('city')
+    searchHistory.innerHTML = localStorage.getItem(localStorage.key(i))
     historyContainer.appendChild(searchHistory)
+
+//Search history button functionality
+    
+}}
+
+function newSearchHistory(){
+
+    var searchHistory = document.createElement('div')
+
+    if(historySwitch === 0){
+    
+//Add input to localStorage to use later
+
+localStorage.setItem(newEntry, inputValue.value)
+
+//Add input as search history button
+
+    searchHistory.classList.add('history')
+    searchHistory.innerHTML = localStorage.getItem(newEntry)
+    historyContainer.appendChild(searchHistory)
+}
 
 //Search history button functionality
 
     searchHistory.addEventListener('click', function(){
         inputValue.value = searchHistory.innerHTML
-        historyContainer.removeChild(searchHistory)
+        historySwitch = 1
         getWeather();
     })
 }
 
 function getWeather(){
-
-    
 //Remove UV index color at start of search, as well as 5 day forecast
     mainWeatherDisplay.classList.remove('hide')
     forecastDisplay.classList.remove('hide')
     rightContent.classList.remove('hide')
-    mainUv.classname = '';
+    mainUv.removeAttribute("class")
+    newEntry = newEntry + 1 
 
 //Fetch to find coordinates and city name based on user input
 
@@ -307,6 +334,7 @@ console.log(dayFiveIconData)
 }
 
 button.addEventListener('click', function(){
+    historySwitch = 0
     getWeather()
 })
 
