@@ -54,8 +54,9 @@
         var historySwitch = false
        
 //#endregion
-//Button Click Functionality
 
+//Append history from local storage with click functionality
+//#region 
 historyContainer.onclick = function(event){
     var x = event.target;
     inputValue.value = x.innerHTML
@@ -72,11 +73,13 @@ for (var i = 0; i < localStorage.length; i++){
 
     searchHistory.classList.add('history')
     searchHistory.innerHTML = localStorage.getItem(localStorage.key(i))
-    historyContainer.appendChild(searchHistory)
-
-//Search history button functionality
-    
+    historyContainer.appendChild(searchHistory) 
 }}
+//#endregion
+
+//Add new cities searched for to local storage and append history button
+//#region 
+
 
 function newSearchHistory(){
 
@@ -94,15 +97,11 @@ localStorage.setItem(newEntry, inputValue.value)
     searchHistory.innerHTML = localStorage.getItem(newEntry)
     historyContainer.appendChild(searchHistory)
 }
-
-//Search history button functionality
-
-    searchHistory.addEventListener('click', function(){
-        inputValue.value = searchHistory.innerHTML
-        historySwitch = 1
-        getWeather();
-    })
 }
+//#endregion
+
+//Get weather function which extracts data from openweather API and appends it to page
+//#region 
 
 function getWeather(){
 //Remove UV index color at start of search, as well as 5 day forecast
@@ -337,6 +336,8 @@ button.addEventListener('click', function(){
     historySwitch = 0
     getWeather()
 })
+
+//#endregion
 
 
 
