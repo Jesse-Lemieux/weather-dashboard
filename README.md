@@ -21,5 +21,5 @@
   
   Also, the dashboard remebers you! Next time you load the page you will notice buttons underneathe the search bar which contain your search history, and they are interactive! Click them to be shown weather data for that target!
   
-  ![Search History](./assets/screenshots/Screenshot (7).png)
+  ![Search History](https://github.com/Jesse-Lemieux/weather-dashboard/blob/41464f3c3cd47d33aa3985452cf80d3abce50412/assets/screenshots/Screenshot%20(7).png)
 
